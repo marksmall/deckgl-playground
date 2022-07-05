@@ -3,6 +3,10 @@ import React from 'react';
 import { cleanup, render } from '@testing-library/react';
 import { afterEach } from 'vitest';
 
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
+
 afterEach(() => {
   cleanup();
 });
@@ -10,7 +14,9 @@ afterEach(() => {
 const customRender = (ui: React.ReactElement, options = {}) =>
   render(ui, {
     // wrap provider(s) here if needed
-    wrapper: ({ children }) => children,
+    wrapper: ({ children }) => (
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    ),
     ...options,
   });
 
