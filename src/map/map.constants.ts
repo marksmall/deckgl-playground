@@ -7,4 +7,4 @@ export const INITIAL_VIEW_STATE = {
 };
 
 export const MAPBOX_ACCESS_TOKEN =
-  '';
+  'pk.eyJ1IjoiYXN0cm9zYXQiLCJhIjoiY2o3YWtjNnJzMGR6ajM3b2FidmNwaDNsaSJ9.lwWi7kOiejlT0RbD7RxtmA';
