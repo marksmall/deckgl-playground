@@ -1,0 +1,1346 @@
+{
+    "tilejson": "v2.2.0",
+    "name": "DWP Benefits",
+    "label": "People on DWP Benefits 2020",
+    "description": "Data from the Department of Work and Pensions on the number of people claiming state benefits in each local area in Great Britain",
+    "version": "1.5.1",
+    "granularity": "OA (average population 270)",
+    "licence": "\u00a9 Crown Copyright (2021) released under OGL v3.0",
+    "provenance": {
+        "sources": [
+            {
+                "text": "DWP statistics",
+                "src": "https://www.gov.uk/government/collections/dwp-statistical-summaries"
+            }
+        ],
+        "creators": [
+            "nathan.bourne@astrosat.net"
+        ]
+    },
+    "agg_methods": {
+        "In work": "sum",
+        "Out of work": "sum",
+        "People on benefits: total": "sum",
+        "Alternative Claimant Count: Total": "sum",
+        "Alternative Claimant Count: Change": "sum",
+        "On-flows: total": "sum",
+        "March": "sum",
+        "April": "sum",
+        "May": "sum",
+        "June": "sum",
+        "July": "sum",
+        "August": "sum"
+    },
+    "index": "OA Code",
+    "uniqueIdProperty": "OA Code",
+    "tiles": [
+        "https://staticdata.testing.astrosat.net/astrosat/isolation_plus/dwp_benefits/r4v1/oa_gb_benefits_breakdown_raw__mvt/{z}/{x}/{y}.pbf"
+    ],
+    "maxZoom": 13,
+    "minZoom": 0,
+    "properties": [
+        {
+            "name": "People on benefits: total",
+            "label": "Number of people claiming benefits",
+            "description": "The total number of people claiming one or more DWP benefits (excluding people claiming state pension), counting each individual claimant once.",
+            "source": "DWP (2020)",
+            "details": "The total number of people claiming one or more DWP benefits (excluding people claiming state pension), counting each individual claimant once. Note the source data are subject to introduced random errors to minimise the risk of identifying individuals: this means that small numbers may not be perfectly accurate, and in some cases therefore the breakdown statistics do not add up to the total.",
+            "aggregation": "sum",
+            "aggregates": {
+                "OA": {
+                    "GB": 7402009,
+                    "England": 6317185,
+                    "Scotland": 670478,
+                    "Wales": 414346
+                },
+                "LSOA": {
+                    "GB": 7402009,
+                    "England": 6317185,
+                    "Scotland": 670478,
+                    "Wales": 414346
+                },
+                "MSOA": {
+                    "GB": 7402009,
+                    "England": 6317185,
+                    "Scotland": 670478,
+                    "Wales": 414346
+                },
+                "LAD16": {
+                    "GB": 7402009,
+                    "England": 6317185,
+                    "Scotland": 670478,
+                    "Wales": 414346
+                },
+                "LAD19": {
+                    "GB": 7402009,
+                    "England": 6317185,
+                    "Scotland": 670478,
+                    "Wales": 414346
+                }
+            },
+            "breakdown": [
+                "In work",
+                "Out of work"
+            ],
+            "min": {
+                "OA": 0,
+                "LSOA": 0,
+                "MSOA": 33,
+                "LAD16": 54,
+                "LAD19": 54
+            },
+            "max": {
+                "OA": 1001,
+                "LSOA": 1318,
+                "MSOA": 4062,
+                "LAD16": 197635,
+                "LAD19": 197635
+            },
+            "clip_min": {
+                "OA": 0,
+                "LSOA": 12,
+                "MSOA": 118,
+                "LAD16": 1527,
+                "LAD19": 1471
+            },
+            "clip_max": {
+                "OA": 142,
+                "LSOA": 622,
+                "MSOA": 2786,
+                "LAD16": 94665,
+                "LAD19": 95530
+            },
+            "units": "persons",
+            "type": "continuous",
+            "precision": 0,
+            "application": {
+                "orbis": {
+                    "label": "Number of people claiming benefits",
+                    "display": {
+                        "colormap_type": "negative_sequential",
+                        "colormap_reversed": false,
+                        "color": "YlOrRd"
+                    },
+                    "data_visualisation_components": [
+                        {
+                            "name": "NationalDeviationHistogram",
+                            "props": {
+                                "OA": {
+                                    "data": [
+                                        {
+                                            "x": 50,
+                                            "y": 220697
+                                        },
+                                        {
+                                            "x": 151,
+                                            "y": 6902
+                                        },
+                                        {
+                                            "x": 252,
+                                            "y": 136
+                                        },
+                                        {
+                                            "x": 353,
+                                            "y": 18
+                                        },
+                                        {
+                                            "x": 454,
+                                            "y": 4
+                                        },
+                                        {
+                                            "x": 555,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 656,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 757,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 858,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 959,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LSOA": {
+                                    "data": [
+                                        {
+                                            "x": 66,
+                                            "y": 19400
+                                        },
+                                        {
+                                            "x": 198,
+                                            "y": 13253
+                                        },
+                                        {
+                                            "x": 330,
+                                            "y": 6216
+                                        },
+                                        {
+                                            "x": 462,
+                                            "y": 2228
+                                        },
+                                        {
+                                            "x": 594,
+                                            "y": 483
+                                        },
+                                        {
+                                            "x": 726,
+                                            "y": 118
+                                        },
+                                        {
+                                            "x": 858,
+                                            "y": 24
+                                        },
+                                        {
+                                            "x": 990,
+                                            "y": 4
+                                        },
+                                        {
+                                            "x": 1122,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 1254,
+                                            "y": 2
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "MSOA": {
+                                    "data": [
+                                        {
+                                            "x": 232,
+                                            "y": 1839
+                                        },
+                                        {
+                                            "x": 636,
+                                            "y": 3035
+                                        },
+                                        {
+                                            "x": 1040,
+                                            "y": 1717
+                                        },
+                                        {
+                                            "x": 1444,
+                                            "y": 1077
+                                        },
+                                        {
+                                            "x": 1848,
+                                            "y": 504
+                                        },
+                                        {
+                                            "x": 2252,
+                                            "y": 202
+                                        },
+                                        {
+                                            "x": 2656,
+                                            "y": 73
+                                        },
+                                        {
+                                            "x": 3060,
+                                            "y": 19
+                                        },
+                                        {
+                                            "x": 3464,
+                                            "y": 9
+                                        },
+                                        {
+                                            "x": 3868,
+                                            "y": 5
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LAD16": {
+                                    "data": [
+                                        {
+                                            "x": 9929,
+                                            "y": 255
+                                        },
+                                        {
+                                            "x": 29688,
+                                            "y": 82
+                                        },
+                                        {
+                                            "x": 49447,
+                                            "y": 34
+                                        },
+                                        {
+                                            "x": 69206,
+                                            "y": 3
+                                        },
+                                        {
+                                            "x": 88965,
+                                            "y": 4
+                                        },
+                                        {
+                                            "x": 108724,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 128483,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 148242,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 168001,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 187760,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LAD19": {
+                                    "data": [
+                                        {
+                                            "x": 9929,
+                                            "y": 244
+                                        },
+                                        {
+                                            "x": 29688,
+                                            "y": 83
+                                        },
+                                        {
+                                            "x": 49447,
+                                            "y": 35
+                                        },
+                                        {
+                                            "x": 69206,
+                                            "y": 3
+                                        },
+                                        {
+                                            "x": 88965,
+                                            "y": 4
+                                        },
+                                        {
+                                            "x": 108724,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 128483,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 148242,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 168001,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 187760,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                }
+                            }
+                        },
+                        {
+                            "name": "PropertyBreakdownChart",
+                            "props": {
+                                "info": "The pie chart shows a breakdown of the data summed over all selected areas. Segment size indicates number of people claiming benefits by work status"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Alternative Claimant Count: Total",
+            "label": "Number of unemployment claimants",
+            "description": "The number of people claiming unemployment-related benefits (Alternative Claimant Count). These statistics provide a consistent measure of local levels of unemployed claimants over time and across areas, by modelling what the count would have been if Universal Credit had been in place since 2013 with the broader span of people this covers.",
+            "source": "DWP (2020)",
+            "details": "The number of people claiming unemployment-related benefits (Alternative Claimant Count) in August 2020. These statistics provide a consistent measure of local levels of unemployed claimants over time and across areas, by modelling what the count would have been if Universal Credit had been in place since 2013 with the broader span of people this covers. Note the source data are subject to introduced random errors to minimise the risk of identifying individuals: this means that small numbers may not be perfectly accurate.",
+            "aggregation": "sum",
+            "aggregates": {
+                "OA": {
+                    "GB": 2725862,
+                    "England": 2378698,
+                    "Scotland": 221396,
+                    "Wales": 125768
+                },
+                "LSOA": {
+                    "GB": 2725862,
+                    "England": 2378698,
+                    "Scotland": 221396,
+                    "Wales": 125768
+                },
+                "MSOA": {
+                    "GB": 2725862,
+                    "England": 2378698,
+                    "Scotland": 221396,
+                    "Wales": 125768
+                },
+                "LAD16": {
+                    "GB": 2725862,
+                    "England": 2378698,
+                    "Scotland": 221396,
+                    "Wales": 125768
+                },
+                "LAD19": {
+                    "GB": 2725862,
+                    "England": 2378698,
+                    "Scotland": 221396,
+                    "Wales": 125768
+                }
+            },
+            "min": {
+                "OA": 0,
+                "LSOA": 0,
+                "MSOA": 8,
+                "LAD16": 74,
+                "LAD19": 74
+            },
+            "max": {
+                "OA": 402,
+                "LSOA": 591,
+                "MSOA": 1777,
+                "LAD16": 84815,
+                "LAD19": 84815
+            },
+            "clip_min": {
+                "OA": 0,
+                "LSOA": 0,
+                "MSOA": 37,
+                "LAD16": 293,
+                "LAD19": 291
+            },
+            "clip_max": {
+                "OA": 60,
+                "LSOA": 259,
+                "MSOA": 1176,
+                "LAD16": 37750,
+                "LAD19": 37809
+            },
+            "units": "persons",
+            "type": "continuous",
+            "precision": 0,
+            "application": {
+                "orbis": {
+                    "label": "Number of unemployment claimants",
+                    "display": {
+                        "colormap_type": "negative_sequential",
+                        "colormap_reversed": false,
+                        "color": "YlOrRd"
+                    },
+                    "data_visualisation_components": [
+                        {
+                            "name": "NationalDeviationHistogram",
+                            "props": {
+                                "OA": {
+                                    "data": [
+                                        {
+                                            "x": 20,
+                                            "y": 222215
+                                        },
+                                        {
+                                            "x": 61,
+                                            "y": 5299
+                                        },
+                                        {
+                                            "x": 102,
+                                            "y": 205
+                                        },
+                                        {
+                                            "x": 143,
+                                            "y": 32
+                                        },
+                                        {
+                                            "x": 184,
+                                            "y": 5
+                                        },
+                                        {
+                                            "x": 225,
+                                            "y": 2
+                                        },
+                                        {
+                                            "x": 266,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 307,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 348,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 389,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LSOA": {
+                                    "data": [
+                                        {
+                                            "x": 30,
+                                            "y": 23622
+                                        },
+                                        {
+                                            "x": 90,
+                                            "y": 13071
+                                        },
+                                        {
+                                            "x": 150,
+                                            "y": 3852
+                                        },
+                                        {
+                                            "x": 210,
+                                            "y": 876
+                                        },
+                                        {
+                                            "x": 270,
+                                            "y": 222
+                                        },
+                                        {
+                                            "x": 330,
+                                            "y": 65
+                                        },
+                                        {
+                                            "x": 390,
+                                            "y": 14
+                                        },
+                                        {
+                                            "x": 450,
+                                            "y": 5
+                                        },
+                                        {
+                                            "x": 510,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 570,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "MSOA": {
+                                    "data": [
+                                        {
+                                            "x": 89,
+                                            "y": 2119
+                                        },
+                                        {
+                                            "x": 267,
+                                            "y": 3580
+                                        },
+                                        {
+                                            "x": 445,
+                                            "y": 1589
+                                        },
+                                        {
+                                            "x": 623,
+                                            "y": 727
+                                        },
+                                        {
+                                            "x": 801,
+                                            "y": 294
+                                        },
+                                        {
+                                            "x": 979,
+                                            "y": 111
+                                        },
+                                        {
+                                            "x": 1157,
+                                            "y": 31
+                                        },
+                                        {
+                                            "x": 1335,
+                                            "y": 20
+                                        },
+                                        {
+                                            "x": 1513,
+                                            "y": 6
+                                        },
+                                        {
+                                            "x": 1691,
+                                            "y": 3
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LAD16": {
+                                    "data": [
+                                        {
+                                            "x": 4307,
+                                            "y": 282
+                                        },
+                                        {
+                                            "x": 12782,
+                                            "y": 66
+                                        },
+                                        {
+                                            "x": 21257,
+                                            "y": 25
+                                        },
+                                        {
+                                            "x": 29732,
+                                            "y": 3
+                                        },
+                                        {
+                                            "x": 38207,
+                                            "y": 3
+                                        },
+                                        {
+                                            "x": 46682,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 55157,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 63632,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 72107,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 80582,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LAD19": {
+                                    "data": [
+                                        {
+                                            "x": 4307,
+                                            "y": 272
+                                        },
+                                        {
+                                            "x": 12782,
+                                            "y": 67
+                                        },
+                                        {
+                                            "x": 21257,
+                                            "y": 25
+                                        },
+                                        {
+                                            "x": 29732,
+                                            "y": 3
+                                        },
+                                        {
+                                            "x": 38207,
+                                            "y": 3
+                                        },
+                                        {
+                                            "x": 46682,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 55157,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 63632,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 72107,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 80582,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Alternative Claimant Count: Change",
+            "label": "Change in unemployment claimants",
+            "description": "Change in the number of people claiming unemployment-related benefits (Alternative Claimant Count) between February and August 2020. These statistics provide a consistent measure of local levels of unemployed claimants over time and across areas, by modelling what the count would have been if Universal Credit had been in place since 2013 with the broader span of people this covers.",
+            "source": "DWP (2020)",
+            "details": "The change in the number of people claiming unemployment-related benefits (Alternative Claimant Count) between February and August 2020. These statistics provide a consistent measure of local levels of unemployed claimants over time and across areas, by modelling what the count would have been if Universal Credit had been in place since 2013 with the broader span of people this covers. Note the source data are subject to introduced random errors to minimise the risk of identifying individuals: this means that small numbers may not be perfectly accurate.",
+            "aggregation": "sum",
+            "aggregates": {
+                "OA": {
+                    "GB": 1472089,
+                    "England": 1283436,
+                    "Scotland": 126112,
+                    "Wales": 62541
+                },
+                "LSOA": {
+                    "GB": 1472089,
+                    "England": 1283436,
+                    "Scotland": 126112,
+                    "Wales": 62541
+                },
+                "MSOA": {
+                    "GB": 1472089,
+                    "England": 1283436,
+                    "Scotland": 126112,
+                    "Wales": 62541
+                },
+                "LAD16": {
+                    "GB": 1472089,
+                    "England": 1283436,
+                    "Scotland": 126112,
+                    "Wales": 62541
+                },
+                "LAD19": {
+                    "GB": 1472089,
+                    "England": 1283436,
+                    "Scotland": 126112,
+                    "Wales": 62541
+                }
+            },
+            "min": {
+                "OA": -31,
+                "LSOA": -21,
+                "MSOA": 0,
+                "LAD16": 69,
+                "LAD19": 69
+            },
+            "max": {
+                "OA": 248,
+                "LSOA": 371,
+                "MSOA": 833,
+                "LAD16": 33106,
+                "LAD19": 33106
+            },
+            "clip_min": {
+                "OA": -31,
+                "LSOA": -125,
+                "MSOA": -537,
+                "LAD16": -19264,
+                "LAD19": -19306
+            },
+            "clip_max": {
+                "OA": 31,
+                "LSOA": 125,
+                "MSOA": 537,
+                "LAD16": 19264,
+                "LAD19": 19306
+            },
+            "units": "persons",
+            "type": "continuous",
+            "precision": 0,
+            "application": {
+                "orbis": {
+                    "label": "Change in unemployment claimants",
+                    "display": {
+                        "colormap_type": "diverging",
+                        "colormap_reversed": true,
+                        "color": "RdBu"
+                    },
+                    "data_visualisation_components": [
+                        {
+                            "name": "NationalDeviationHistogram",
+                            "props": {
+                                "OA": {
+                                    "data": [
+                                        {
+                                            "x": -25,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 3,
+                                            "y": 216279
+                                        },
+                                        {
+                                            "x": 32,
+                                            "y": 11322
+                                        },
+                                        {
+                                            "x": 61,
+                                            "y": 134
+                                        },
+                                        {
+                                            "x": 90,
+                                            "y": 15
+                                        },
+                                        {
+                                            "x": 119,
+                                            "y": 5
+                                        },
+                                        {
+                                            "x": 148,
+                                            "y": 2
+                                        },
+                                        {
+                                            "x": 177,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 206,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 235,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LSOA": {
+                                    "data": [
+                                        {
+                                            "x": -9,
+                                            "y": 3286
+                                        },
+                                        {
+                                            "x": 31,
+                                            "y": 30932
+                                        },
+                                        {
+                                            "x": 72,
+                                            "y": 6456
+                                        },
+                                        {
+                                            "x": 113,
+                                            "y": 922
+                                        },
+                                        {
+                                            "x": 154,
+                                            "y": 116
+                                        },
+                                        {
+                                            "x": 195,
+                                            "y": 13
+                                        },
+                                        {
+                                            "x": 236,
+                                            "y": 3
+                                        },
+                                        {
+                                            "x": 277,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 318,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 359,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "MSOA": {
+                                    "data": [
+                                        {
+                                            "x": 42,
+                                            "y": 884
+                                        },
+                                        {
+                                            "x": 126,
+                                            "y": 4106
+                                        },
+                                        {
+                                            "x": 210,
+                                            "y": 2173
+                                        },
+                                        {
+                                            "x": 294,
+                                            "y": 734
+                                        },
+                                        {
+                                            "x": 378,
+                                            "y": 354
+                                        },
+                                        {
+                                            "x": 462,
+                                            "y": 147
+                                        },
+                                        {
+                                            "x": 546,
+                                            "y": 63
+                                        },
+                                        {
+                                            "x": 630,
+                                            "y": 11
+                                        },
+                                        {
+                                            "x": 714,
+                                            "y": 5
+                                        },
+                                        {
+                                            "x": 798,
+                                            "y": 3
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LAD16": {
+                                    "data": [
+                                        {
+                                            "x": 1712,
+                                            "y": 243
+                                        },
+                                        {
+                                            "x": 5017,
+                                            "y": 77
+                                        },
+                                        {
+                                            "x": 8322,
+                                            "y": 36
+                                        },
+                                        {
+                                            "x": 11627,
+                                            "y": 16
+                                        },
+                                        {
+                                            "x": 14932,
+                                            "y": 4
+                                        },
+                                        {
+                                            "x": 18237,
+                                            "y": 2
+                                        },
+                                        {
+                                            "x": 21542,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 24847,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 28152,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 31457,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LAD19": {
+                                    "data": [
+                                        {
+                                            "x": 1712,
+                                            "y": 232
+                                        },
+                                        {
+                                            "x": 5017,
+                                            "y": 78
+                                        },
+                                        {
+                                            "x": 8322,
+                                            "y": 37
+                                        },
+                                        {
+                                            "x": 11627,
+                                            "y": 16
+                                        },
+                                        {
+                                            "x": 14932,
+                                            "y": 4
+                                        },
+                                        {
+                                            "x": 18237,
+                                            "y": 2
+                                        },
+                                        {
+                                            "x": 21542,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 24847,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 28152,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 31457,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "On-flows: total",
+            "label": "Number of new unemployment claimants",
+            "description": "The number of people claiming unemployment-related benefits who were not claiming in the previous month (on-flows). These statistics provide a consistent measure of local levels of unemployed claimants over time and across areas, by modelling what the count would have been if Universal Credit had been in place since 2013 with the broader span of people this covers.",
+            "source": "DWP (2020)",
+            "details": "The number of people claiming unemployment-related benefits who were not claiming in the previous month (on-flows). The data provide the sum of on-flows from March to August, and are broken down by month. These statistics provide a consistent measure of local levels of unemployed claimants over time and across areas, by modelling what the count would have been if Universal Credit had been in place since 2013 with the broader span of people this covers. Note the source data are subject to introduced random errors to minimise the risk of identifying individuals: this means that small numbers may not be perfectly accurate.",
+            "aggregation": "sum",
+            "aggregates": {
+                "OA": {
+                    "GB": 2668050,
+                    "England": 2413711,
+                    "Scotland": 135492,
+                    "Wales": 118847
+                },
+                "LSOA": {
+                    "GB": 2668050,
+                    "England": 2413711,
+                    "Scotland": 135492,
+                    "Wales": 118847
+                },
+                "MSOA": {
+                    "GB": 2668050,
+                    "England": 2413711,
+                    "Scotland": 135492,
+                    "Wales": 118847
+                },
+                "LAD16": {
+                    "GB": 2668050,
+                    "England": 2413711,
+                    "Scotland": 135492,
+                    "Wales": 118847
+                },
+                "LAD19": {
+                    "GB": 2668050,
+                    "England": 2413711,
+                    "Scotland": 135492,
+                    "Wales": 118847
+                }
+            },
+            "breakdown": [
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August"
+            ],
+            "min": {
+                "OA": 0,
+                "LSOA": 0,
+                "MSOA": 0,
+                "LAD16": 122,
+                "LAD19": 122
+            },
+            "max": {
+                "OA": 479,
+                "LSOA": 715,
+                "MSOA": 1828,
+                "LAD16": 71321,
+                "LAD19": 71321
+            },
+            "clip_min": {
+                "OA": 0,
+                "LSOA": 0,
+                "MSOA": 11,
+                "LAD16": 176,
+                "LAD19": 173
+            },
+            "clip_max": {
+                "OA": 64,
+                "LSOA": 268,
+                "MSOA": 1154,
+                "LAD16": 36457,
+                "LAD19": 36600
+            },
+            "units": "persons",
+            "type": "continuous",
+            "precision": 0,
+            "application": {
+                "orbis": {
+                    "label": "Number of new unemployment claimants",
+                    "display": {
+                        "colormap_type": "negative_sequential",
+                        "colormap_reversed": false,
+                        "color": "YlOrRd"
+                    },
+                    "data_visualisation_components": [
+                        {
+                            "name": "NationalDeviationHistogram",
+                            "props": {
+                                "OA": {
+                                    "data": [
+                                        {
+                                            "x": 24,
+                                            "y": 223036
+                                        },
+                                        {
+                                            "x": 72,
+                                            "y": 4563
+                                        },
+                                        {
+                                            "x": 120,
+                                            "y": 132
+                                        },
+                                        {
+                                            "x": 168,
+                                            "y": 17
+                                        },
+                                        {
+                                            "x": 216,
+                                            "y": 8
+                                        },
+                                        {
+                                            "x": 264,
+                                            "y": 2
+                                        },
+                                        {
+                                            "x": 312,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 360,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 408,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 456,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LSOA": {
+                                    "data": [
+                                        {
+                                            "x": 36,
+                                            "y": 27174
+                                        },
+                                        {
+                                            "x": 108,
+                                            "y": 11073
+                                        },
+                                        {
+                                            "x": 180,
+                                            "y": 2823
+                                        },
+                                        {
+                                            "x": 252,
+                                            "y": 536
+                                        },
+                                        {
+                                            "x": 324,
+                                            "y": 96
+                                        },
+                                        {
+                                            "x": 396,
+                                            "y": 21
+                                        },
+                                        {
+                                            "x": 468,
+                                            "y": 4
+                                        },
+                                        {
+                                            "x": 540,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 612,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 684,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "MSOA": {
+                                    "data": [
+                                        {
+                                            "x": 91,
+                                            "y": 2777
+                                        },
+                                        {
+                                            "x": 274,
+                                            "y": 3035
+                                        },
+                                        {
+                                            "x": 457,
+                                            "y": 1471
+                                        },
+                                        {
+                                            "x": 640,
+                                            "y": 671
+                                        },
+                                        {
+                                            "x": 823,
+                                            "y": 323
+                                        },
+                                        {
+                                            "x": 1006,
+                                            "y": 136
+                                        },
+                                        {
+                                            "x": 1189,
+                                            "y": 49
+                                        },
+                                        {
+                                            "x": 1372,
+                                            "y": 10
+                                        },
+                                        {
+                                            "x": 1555,
+                                            "y": 6
+                                        },
+                                        {
+                                            "x": 1738,
+                                            "y": 2
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LAD16": {
+                                    "data": [
+                                        {
+                                            "x": 3680,
+                                            "y": 266
+                                        },
+                                        {
+                                            "x": 10801,
+                                            "y": 70
+                                        },
+                                        {
+                                            "x": 17922,
+                                            "y": 26
+                                        },
+                                        {
+                                            "x": 25043,
+                                            "y": 12
+                                        },
+                                        {
+                                            "x": 32164,
+                                            "y": 3
+                                        },
+                                        {
+                                            "x": 39285,
+                                            "y": 2
+                                        },
+                                        {
+                                            "x": 46406,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 53527,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 60648,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 67769,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LAD19": {
+                                    "data": [
+                                        {
+                                            "x": 3680,
+                                            "y": 256
+                                        },
+                                        {
+                                            "x": 10801,
+                                            "y": 70
+                                        },
+                                        {
+                                            "x": 17922,
+                                            "y": 27
+                                        },
+                                        {
+                                            "x": 25043,
+                                            "y": 12
+                                        },
+                                        {
+                                            "x": 32164,
+                                            "y": 3
+                                        },
+                                        {
+                                            "x": 39285,
+                                            "y": 2
+                                        },
+                                        {
+                                            "x": 46406,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 53527,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 60648,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 67769,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                }
+                            }
+                        },
+                        {
+                            "name": "PropertyBreakdownChart",
+                            "props": {
+                                "info": "The pie chart shows a breakdown of the data summed over all selected areas. Segment size indicates number of new claimants by month of first claim"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "application": {
+        "orbis": {
+            "layer": {
+                "name": "CustomMVTLayer",
+                "props": {
+                    "config": "isolationPlusLayerConfig"
+                }
+            },
+            "categories": {
+                "name": "Deprivation",
+                "child": {
+                    "name": "Income & Employment"
+                }
+            },
+            "sidebar_component": {
+                "name": "RadioPicker"
+            }
+        }
+    },
+    "default_geometry_type": "OA",
+    "geometry_types": [
+        "OA",
+        "LSOA",
+        "MSOA",
+        "LAD16",
+        "LAD19"
+    ]
+}

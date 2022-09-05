@@ -1,0 +1,384 @@
+{
+    "tilejson": "v2.2.0",
+    "name": "Child Poverty",
+    "label": "Child Poverty - DWP 2018/19",
+    "description": "Data from the Department of Work and Pensions on the number of children in low-income families in each local area in Great Britain",
+    "version": "2.4.1",
+    "granularity": "OA (average population 270)",
+    "licence": "\u00a9 Crown Copyright (2021) released under OGL v3.0",
+    "provenance": {
+        "sources": [
+            {
+                "text": "DWP statistics",
+                "src": "https://www.gov.uk/government/collections/dwp-statistical-summaries"
+            }
+        ],
+        "creators": [
+            "nathan.bourne@astrosat.net"
+        ]
+    },
+    "agg_methods": {
+        "Working families": "sum",
+        "Non-working families": "sum",
+        "Children in low income families: total": "sum"
+    },
+    "index": "OA Code",
+    "uniqueIdProperty": "OA Code",
+    "tiles": [
+        "https://staticdata.testing.astrosat.net/astrosat/isolation_plus/child_poverty/r4v1/oa_gb_childpov2019_breakdown_raw__mvt/{z}/{x}/{y}.pbf"
+    ],
+    "maxZoom": 13,
+    "minZoom": 0,
+    "properties": [
+        {
+            "name": "Children in low income families: total",
+            "label": "Children in low-income families",
+            "description": "The number of children living in relative low income by local area. Relative low-income is defined as a family whose equivalised income is below 60 per cent of contemporary median income. Gross income measure is Before Housing Costs and includes contributions from earnings, state support and pensions.",
+            "source": "DWP (2020)",
+            "details": "The number of children living in relative low income by local area in the tax year 2018/19. Relative low-income is defined as a family whose equivalised income is below 60 per cent of contemporary median income. Gross income measure is Before Housing Costs and includes contributions from earnings, state support and pensions. A family must have claimed one or more of Universal Credit, Tax Credits or Housing Benefit at any point in the year to be classed as low income in these statistics. For the purposes of the breakdown statistics, working families are those in which either the adult claimant of Child Benefit or any partners have an accumulated period of at least 26 weeks paid employment or self-employment within the tax year. Note the source data are subject to introduced random errors to minimise the risk of identifying individuals: this means that small numbers may not be perfectly accurate, and in some cases therefore the breakdown statistics do not add up to the total.",
+            "aggregation": "sum",
+            "aggregates": {
+                "OA": {
+                    "GB": 2731684,
+                    "England": 2415908,
+                    "Scotland": 190752,
+                    "Wales": 125024
+                },
+                "LSOA": {
+                    "GB": 2731684,
+                    "England": 2415908,
+                    "Scotland": 190752,
+                    "Wales": 125024
+                },
+                "MSOA": {
+                    "GB": 2731684,
+                    "England": 2415908,
+                    "Scotland": 190752,
+                    "Wales": 125024
+                },
+                "LAD16": {
+                    "GB": 2731684,
+                    "England": 2415908,
+                    "Scotland": 190752,
+                    "Wales": 125024
+                },
+                "LAD19": {
+                    "GB": 2731684,
+                    "England": 2415908,
+                    "Scotland": 190752,
+                    "Wales": 125024
+                }
+            },
+            "breakdown": [
+                "Working families",
+                "Non-working families"
+            ],
+            "min": {
+                "OA": 0,
+                "LSOA": 0,
+                "MSOA": 0,
+                "LAD16": 62,
+                "LAD19": 62
+            },
+            "max": {
+                "OA": 327,
+                "LSOA": 808,
+                "MSOA": 3182,
+                "LAD16": 108154,
+                "LAD19": 108154
+            },
+            "clip_min": {
+                "OA": 0,
+                "LSOA": 0,
+                "MSOA": 21,
+                "LAD16": 389,
+                "LAD19": 374
+            },
+            "clip_max": {
+                "OA": 74,
+                "LSOA": 404,
+                "MSOA": 1798,
+                "LAD16": 46040,
+                "LAD19": 46460
+            },
+            "precision": 0,
+            "units": "persons",
+            "type": "continuous",
+            "application": {
+                "orbis": {
+                    "label": "Children in low-income families",
+                    "display": {
+                        "colormap_type": "negative_sequential",
+                        "colormap_reversed": false,
+                        "color": "YlOrRd"
+                    },
+                    "data_visualisation_components": [
+                        {
+                            "name": "NationalDeviationHistogram",
+                            "props": {
+                                "OA": {
+                                    "data": [
+                                        {
+                                            "x": 16,
+                                            "y": 210508
+                                        },
+                                        {
+                                            "x": 49,
+                                            "y": 14113
+                                        },
+                                        {
+                                            "x": 82,
+                                            "y": 2217
+                                        },
+                                        {
+                                            "x": 115,
+                                            "y": 689
+                                        },
+                                        {
+                                            "x": 148,
+                                            "y": 186
+                                        },
+                                        {
+                                            "x": 181,
+                                            "y": 31
+                                        },
+                                        {
+                                            "x": 214,
+                                            "y": 10
+                                        },
+                                        {
+                                            "x": 247,
+                                            "y": 3
+                                        },
+                                        {
+                                            "x": 280,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 313,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LSOA": {
+                                    "data": [
+                                        {
+                                            "x": 40,
+                                            "y": 30733
+                                        },
+                                        {
+                                            "x": 121,
+                                            "y": 8221
+                                        },
+                                        {
+                                            "x": 202,
+                                            "y": 1826
+                                        },
+                                        {
+                                            "x": 283,
+                                            "y": 533
+                                        },
+                                        {
+                                            "x": 364,
+                                            "y": 209
+                                        },
+                                        {
+                                            "x": 445,
+                                            "y": 120
+                                        },
+                                        {
+                                            "x": 526,
+                                            "y": 46
+                                        },
+                                        {
+                                            "x": 607,
+                                            "y": 27
+                                        },
+                                        {
+                                            "x": 688,
+                                            "y": 10
+                                        },
+                                        {
+                                            "x": 769,
+                                            "y": 4
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "MSOA": {
+                                    "data": [
+                                        {
+                                            "x": 159,
+                                            "y": 5518
+                                        },
+                                        {
+                                            "x": 478,
+                                            "y": 2152
+                                        },
+                                        {
+                                            "x": 797,
+                                            "y": 538
+                                        },
+                                        {
+                                            "x": 1116,
+                                            "y": 147
+                                        },
+                                        {
+                                            "x": 1435,
+                                            "y": 49
+                                        },
+                                        {
+                                            "x": 1754,
+                                            "y": 45
+                                        },
+                                        {
+                                            "x": 2073,
+                                            "y": 12
+                                        },
+                                        {
+                                            "x": 2392,
+                                            "y": 7
+                                        },
+                                        {
+                                            "x": 2711,
+                                            "y": 8
+                                        },
+                                        {
+                                            "x": 3030,
+                                            "y": 4
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LAD16": {
+                                    "data": [
+                                        {
+                                            "x": 5465,
+                                            "y": 311
+                                        },
+                                        {
+                                            "x": 16275,
+                                            "y": 54
+                                        },
+                                        {
+                                            "x": 27085,
+                                            "y": 10
+                                        },
+                                        {
+                                            "x": 37895,
+                                            "y": 2
+                                        },
+                                        {
+                                            "x": 48705,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 59515,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 70325,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 81135,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 91945,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 102755,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                },
+                                "LAD19": {
+                                    "data": [
+                                        {
+                                            "x": 5465,
+                                            "y": 302
+                                        },
+                                        {
+                                            "x": 16275,
+                                            "y": 54
+                                        },
+                                        {
+                                            "x": 27085,
+                                            "y": 10
+                                        },
+                                        {
+                                            "x": 37895,
+                                            "y": 2
+                                        },
+                                        {
+                                            "x": 48705,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 59515,
+                                            "y": 1
+                                        },
+                                        {
+                                            "x": 70325,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 81135,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 91945,
+                                            "y": 0
+                                        },
+                                        {
+                                            "x": 102755,
+                                            "y": 1
+                                        }
+                                    ],
+                                    "info": "The bar chart is a histogram describing the full dataset across Great Britain. The height of each bar indicates the number of areas in GB that have values within the width of the bar on the horizontal axis. The yellow line shows where your selected area (or the average of all selected areas) falls in comparison to the rest of GB."
+                                }
+                            }
+                        },
+                        {
+                            "name": "PropertyBreakdownChart",
+                            "props": {
+                                "info": "The pie chart shows a breakdown of the data summed over all selected areas. Segment size indicates number of children by family work status"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "application": {
+        "orbis": {
+            "layer": {
+                "name": "CustomMVTLayer",
+                "props": {
+                    "config": "isolationPlusLayerConfig"
+                }
+            },
+            "categories": {
+                "name": "Deprivation",
+                "child": {
+                    "name": "Children"
+                }
+            },
+            "sidebar_component": {
+                "name": "RadioPicker"
+            }
+        }
+    },
+    "default_geometry_type": "OA",
+    "geometry_types": [
+        "OA",
+        "LSOA",
+        "MSOA",
+        "LAD16",
+        "LAD19"
+    ]
+}
