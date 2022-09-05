@@ -4,22 +4,26 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { StaticMap, MapContext, NavigationControl } from 'react-map-gl';
 import DeckGL from '@deck.gl/react/typed';
-import { ArcLayer, GeoJsonLayer } from '@deck.gl/layers/typed';
-import { PickingInfo } from '@deck.gl/core/typed';
-import { MVTLayer } from '@deck.gl/geo-layers/typed';
+// import { ArcLayer, GeoJsonLayer } from '@deck.gl/layers/typed';
+// import { MVTLayer } from '@deck.gl/geo-layers/typed';
 
+import { DataFilterExtension } from '@deck.gl/extensions/typed';
+
+import type { PickingInfo } from '@deck.gl/core/typed';
 import { MVTComboLayer } from './mvt-combo-layer';
+
+import * as benefits from './oa_gb_benefits_breakdown_raw_allgeo.json';
+import * as child from './oa_gb_childpov2019_breakdown_raw_allgeo.json';
+console.log('BENEFITS: ', benefits);
+console.log('CHIOLD: ', child);
 
 import { MAPBOX_ACCESS_TOKEN, INITIAL_VIEW_STATE } from './map.constants';
 
-const AIR_PORTS =
-  'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_airports.geojson';
+const MVT_LAD_BENEFITS =
+  'https://astrosat-testing-public.s3.dualstack.eu-west-1.amazonaws.com/astrosat/lad_2019_gb_benefits_breakdown_raw__mvt/{z}/{x}/{y}.pbf';
 
-const MVT_LAD_MORTALITY =
-  'https://astrosat-testing-public.s3.eu-west-1.amazonaws.com/astrosat/lad_2019_gb_mortality__mvt/{z}/{x}/{y}.pbf';
-
-const MVT_LAD_MIGRATION =
-  'https://astrosat-testing-public.s3.eu-west-1.amazonaws.com/astrosat/lad_2019_gb_migration__mvt/{z}/{x}/{y}.pbf';
+const MVT_LAD_CHILD_POVERTY =
+  'https://astrosat-testing-public.s3.dualstack.eu-west-1.amazonaws.com/astrosat/lad_2019_gb_childpov2019_breakdown_raw__mvt/{z}/{x}/{y}.pbf';
 
 const NAV_CONTROL_STYLE = {
   position: 'absolute',
@@ -35,71 +39,52 @@ const onClick = (info: PickingInfo) => {
   }
 };
 
-const mvtComboLayer = new MVTComboLayer({
-  data: MVT_LAD_MIGRATION,
-  extraDataUrl: [MVT_LAD_MORTALITY],
-  getFillColor: [0, 128, 200, 150],
-  getLineColor: [16, 16, 16],
-  getLineWidth: 64,
-
-  pickable: true,
-  autoHighlight: true,
-  onClick,
-});
-
 // const migrationLayer = new MVTLayer({
-//   data: MVT_LAD_MIGRATION,
+//   data: MVT_LAD_BENEFITS,
 //   uniqueIdProperty: 'LAD Code',
 
 //   getFillColor: [128, 200, 0, 150],
 // });
 
 // const mortalityLayer = new MVTLayer({
-//   data: MVT_LAD_MORTALITY,
+//   data: MVT_LAD_CHILD_POVERTY,
 //   uniqueIdProperty: 'LAD Code',
 
 //   getFillColor: [128, 0, 200, 150],
 // });
 
-const layers = [
-  // new GeoJsonLayer({
-  //   id: 'airports',
-  //   data: AIR_PORTS,
-  //   // Styles
-  //   filled: true,
-  //   pointRadiusMinPixels: 2,
-  //   pointRadiusScale: 2000,
-  //   getPointRadius: feature => 11 - feature.properties?.scalerank,
-  //   getFillColor: [200, 0, 80, 180],
-  //   // Interactive props
-  //   pickable: true,
-  //   autoHighlight: true,
-  //   onClick,
-  // }),
-  // new ArcLayer({
-  //   id: 'arcs',
-  //   data: AIR_PORTS,
-  //   dataTransform: data =>
-  //     data.features?.filter(
-  //       (feature: unknown) => feature.properties.scalerank < 4,
-  //     ),
-  //   // Styles
-  //   getSourcePosition: () => [-0.4531566, 51.4709959], // London
-  //   getTargetPosition: f => f.geometry.coordinates,
-  //   getSourceColor: [0, 128, 200],
-  //   getTargetColor: [200, 0, 80],
-  //   getWidth: 1,
-  // }),
-  mvtComboLayer,
-];
+const Map = ({ selectedProperties, selectedFilterRanges }) => {
+  const mvtComboLayer = new MVTComboLayer({
+    data: MVT_LAD_BENEFITS,
+    extraData: [MVT_LAD_CHILD_POVERTY],
+    uniqueIdProperty: 'LAD Code',
 
-const Map = () => {
+    getFillColor: [0, 128, 200, 150],
+    getLineColor: [16, 16, 16],
+    getLineWidth: 64,
+
+    pickable: true,
+    onClick,
+    extensions: [
+      new DataFilterExtension({ filterSize: selectedProperties.length }),
+    ],
+    getFilterValue: feature => {
+      const filters = selectedProperties?.map(
+        property => feature.properties[property.name],
+      );
+
+      return filters;
+    },
+    filterRange: selectedFilterRanges,
+  });
+
   return (
     <DeckGL
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
-      layers={layers}
+      layers={[mvtComboLayer]}
       ContextProvider={MapContext.Provider}
+      height="85%"
     >
       <StaticMap
         mapStyle="mapbox://styles/mapbox/light-v9"
