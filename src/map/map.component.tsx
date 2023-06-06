@@ -6,6 +6,7 @@ import { StaticMap, MapContext, NavigationControl } from 'react-map-gl';
 import DeckGL from '@deck.gl/react/typed';
 import { ArcLayer, GeoJsonLayer } from '@deck.gl/layers/typed';
 import { PickingInfo } from '@deck.gl/core/typed';
+import { MVTLayer } from '@deck.gl/geo-layers/typed';
 
 import { MVTComboLayer } from './mvt-combo-layer';
 
@@ -46,35 +47,49 @@ const mvtComboLayer = new MVTComboLayer({
   onClick,
 });
 
+// const migrationLayer = new MVTLayer({
+//   data: MVT_LAD_MIGRATION,
+//   uniqueIdProperty: 'LAD Code',
+
+//   getFillColor: [128, 200, 0, 150],
+// });
+
+// const mortalityLayer = new MVTLayer({
+//   data: MVT_LAD_MORTALITY,
+//   uniqueIdProperty: 'LAD Code',
+
+//   getFillColor: [128, 0, 200, 150],
+// });
+
 const layers = [
-  new GeoJsonLayer({
-    id: 'airports',
-    data: AIR_PORTS,
-    // Styles
-    filled: true,
-    pointRadiusMinPixels: 2,
-    pointRadiusScale: 2000,
-    getPointRadius: feature => 11 - feature.properties?.scalerank,
-    getFillColor: [200, 0, 80, 180],
-    // Interactive props
-    pickable: true,
-    autoHighlight: true,
-    onClick,
-  }),
-  new ArcLayer({
-    id: 'arcs',
-    data: AIR_PORTS,
-    dataTransform: data =>
-      data.features?.filter(
-        (feature: unknown) => feature.properties.scalerank < 4,
-      ),
-    // Styles
-    getSourcePosition: () => [-0.4531566, 51.4709959], // London
-    getTargetPosition: f => f.geometry.coordinates,
-    getSourceColor: [0, 128, 200],
-    getTargetColor: [200, 0, 80],
-    getWidth: 1,
-  }),
+  // new GeoJsonLayer({
+  //   id: 'airports',
+  //   data: AIR_PORTS,
+  //   // Styles
+  //   filled: true,
+  //   pointRadiusMinPixels: 2,
+  //   pointRadiusScale: 2000,
+  //   getPointRadius: feature => 11 - feature.properties?.scalerank,
+  //   getFillColor: [200, 0, 80, 180],
+  //   // Interactive props
+  //   pickable: true,
+  //   autoHighlight: true,
+  //   onClick,
+  // }),
+  // new ArcLayer({
+  //   id: 'arcs',
+  //   data: AIR_PORTS,
+  //   dataTransform: data =>
+  //     data.features?.filter(
+  //       (feature: unknown) => feature.properties.scalerank < 4,
+  //     ),
+  //   // Styles
+  //   getSourcePosition: () => [-0.4531566, 51.4709959], // London
+  //   getTargetPosition: f => f.geometry.coordinates,
+  //   getSourceColor: [0, 128, 200],
+  //   getTargetColor: [200, 0, 80],
+  //   getWidth: 1,
+  // }),
   mvtComboLayer,
 ];
 
@@ -83,7 +98,7 @@ const Map = () => {
     <DeckGL
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
-      layers={[layers]}
+      layers={layers}
       ContextProvider={MapContext.Provider}
     >
       <StaticMap
