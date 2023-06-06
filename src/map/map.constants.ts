@@ -6,5 +6,4 @@ export const INITIAL_VIEW_STATE = {
   pitch: 30,
 };
 
-export const MAPBOX_ACCESS_TOKEN =
-  '';
+export const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
