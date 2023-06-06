@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 
 import Map from '~/map/map.component';
 import { MapControls } from '~/map/map-controls.component';
+import { DataSetProperty } from '~/map/map-controls.component';
 
 import * as benefits from '../map/oa_gb_benefits_breakdown_raw_allgeo.json';
 import * as childs from '../map/oa_gb_childpov2019_breakdown_raw_allgeo.json';
 
 const App = () => {
   const [selectedBenefitProperty, setSelectedBenefitProperty] =
-    useState<object>(benefits?.properties[0]);
-  const [selectedChildProperty, setSelectedChildProperty] = useState<object>(
-    childs?.properties[0],
-  );
+    useState<DataSetProperty>(benefits?.properties[0]);
+  const [selectedChildProperty, setSelectedChildProperty] =
+    useState<DataSetProperty>(childs?.properties[0]);
 
   const [selectedBenefitMinValue, setSelectedBenefitMinValue] =
     useState<number>(selectedBenefitProperty?.min.LAD19);
@@ -33,6 +33,8 @@ const App = () => {
     setSelectedChildMinValue(selectedChildProperty?.min.LAD19);
     setSelectedChildMaxValue(selectedChildProperty?.max.LAD19);
   }, [selectedChildProperty]);
+
+  console.log('BENEFITS: ', benefits.properties);
 
   return (
     <div className="">

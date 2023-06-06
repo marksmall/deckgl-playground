@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -10,7 +10,11 @@ import DeckGL from '@deck.gl/react/typed';
 import { DataFilterExtension } from '@deck.gl/extensions/typed';
 
 import type { PickingInfo } from '@deck.gl/core/typed';
+import type { Feature } from 'geojson';
+
 import { MVTComboLayer } from './mvt-combo-layer';
+
+import { DataSetProperty } from './map-controls.component';
 
 import * as benefits from './oa_gb_benefits_breakdown_raw_allgeo.json';
 import * as child from './oa_gb_childpov2019_breakdown_raw_allgeo.json';
@@ -53,7 +57,12 @@ const onClick = (info: PickingInfo) => {
 //   getFillColor: [128, 0, 200, 150],
 // });
 
-const Map = ({ selectedProperties, selectedFilterRanges }) => {
+interface Props {
+  selectedProperties: DataSetProperty[];
+  selectedFilterRanges: Array<number[]>;
+}
+
+const Map: FC<Props> = ({ selectedProperties, selectedFilterRanges }) => {
   const mvtComboLayer = new MVTComboLayer({
     data: MVT_LAD_BENEFITS,
     extraData: [MVT_LAD_CHILD_POVERTY],
@@ -68,10 +77,12 @@ const Map = ({ selectedProperties, selectedFilterRanges }) => {
     extensions: [
       new DataFilterExtension({ filterSize: selectedProperties.length }),
     ],
-    getFilterValue: feature => {
-      const filters = selectedProperties?.map(
-        property => feature.properties[property.name],
-      );
+    getFilterValue: (feature: Feature) => {
+      const filters = selectedProperties?.map((property: DataSetProperty) => {
+        if (feature.properties) {
+          return feature.properties[property.name];
+        }
+      });
 
       return filters;
     },
@@ -83,6 +94,8 @@ const Map = ({ selectedProperties, selectedFilterRanges }) => {
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
       layers={[mvtComboLayer]}
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       ContextProvider={MapContext.Provider}
       height="85%"
     >
